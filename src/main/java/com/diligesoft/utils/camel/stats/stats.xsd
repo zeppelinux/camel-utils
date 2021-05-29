@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="routeStat" type="routeStatType"/>
+  <xs:complexType name="routeStatType">
+    <xs:sequence>
+      <xs:element type="processorStatsType" name="processorStats"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="id"/>
+    <xs:attribute type="xs:string" name="state"/>
+    <xs:attribute type="xs:string" name="exchangesInflight"/>
+    <xs:attribute type="xs:string" name="selfProcessingTime"/>
+    <xs:attribute type="xs:string" name="oldestInflightExchangeId"/>
+    <xs:attribute type="xs:string" name="oldestInflightDuration"/>
+    <xs:attribute type="xs:string" name="exchangesCompleted"/>
+    <xs:attribute type="xs:string" name="exchangesFailed"/>
+    <xs:attribute type="xs:string" name="failuresHandled"/>
+    <xs:attribute type="xs:string" name="redeliveries"/>
+    <xs:attribute type="xs:string" name="externalRedeliveries"/>
+    <xs:attribute type="xs:string" name="minProcessingTime"/>
+    <xs:attribute type="xs:string" name="maxProcessingTime"/>
+    <xs:attribute type="xs:string" name="totalProcessingTime"/>
+    <xs:attribute type="xs:string" name="lastProcessingTime"/>
+    <xs:attribute type="xs:string" name="deltaProcessingTime"/>
+    <xs:attribute type="xs:string" name="meanProcessingTime"/>
+    <xs:attribute type="xs:string" name="startTimestamp"/>
+    <xs:attribute type="xs:string" name="resetTimestamp"/>
+    <xs:attribute type="xs:string" name="firstExchangeCompletedTimestamp"/>
+    <xs:attribute type="xs:string" name="firstExchangeCompletedExchangeId"/>
+    <xs:attribute type="xs:string" name="firstExchangeFailureTimestamp"/>
+    <xs:attribute type="xs:string" name="firstExchangeFailureExchangeId"/>
+    <xs:attribute type="xs:string" name="lastExchangeCompletedTimestamp"/>
+    <xs:attribute type="xs:string" name="lastExchangeCompletedExchangeId"/>
+    <xs:attribute type="xs:string" name="lastExchangeFailureTimestamp"/>
+    <xs:attribute type="xs:string" name="lastExchangeFailureExchangeId"/>
+  </xs:complexType>
+  <xs:complexType name="processorStatsType">
+    <xs:sequence>
+      <xs:element type="processorStatType" name="processorStat" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="processorStatType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="id" use="optional"/>
+        <xs:attribute type="xs:string" name="index" use="optional"/>
+        <xs:attribute type="xs:string" name="state" use="optional"/>
+        <xs:attribute type="xs:string" name="accumulatedProcessingTime" use="optional"/>
+        <xs:attribute type="xs:string" name="exchangesCompleted" use="optional"/>
+        <xs:attribute type="xs:string" name="exchangesFailed" use="optional"/>
+        <xs:attribute type="xs:string" name="failuresHandled" use="optional"/>
+        <xs:attribute type="xs:string" name="redeliveries" use="optional"/>
+        <xs:attribute type="xs:string" name="externalRedeliveries" use="optional"/>
+        <xs:attribute type="xs:string" name="minProcessingTime" use="optional"/>
+        <xs:attribute type="xs:string" name="maxProcessingTime" use="optional"/>
+        <xs:attribute type="xs:string" name="totalProcessingTime" use="optional"/>
+        <xs:attribute type="xs:string" name="lastProcessingTime" use="optional"/>
+        <xs:attribute type="xs:string" name="deltaProcessingTime" use="optional"/>
+        <xs:attribute type="xs:string" name="meanProcessingTime" use="optional"/>
+        <xs:attribute type="xs:string" name="startTimestamp" use="optional"/>
+        <xs:attribute type="xs:string" name="resetTimestamp" use="optional"/>
+        <xs:attribute type="xs:string" name="firstExchangeCompletedTimestamp" use="optional"/>
+        <xs:attribute type="xs:string" name="firstExchangeCompletedExchangeId" use="optional"/>
+        <xs:attribute type="xs:string" name="firstExchangeFailureTimestamp" use="optional"/>
+        <xs:attribute type="xs:string" name="firstExchangeFailureExchangeId" use="optional"/>
+        <xs:attribute type="xs:string" name="lastExchangeCompletedTimestamp" use="optional"/>
+        <xs:attribute type="xs:string" name="lastExchangeCompletedExchangeId" use="optional"/>
+        <xs:attribute type="xs:string" name="lastExchangeFailureTimestamp" use="optional"/>
+        <xs:attribute type="xs:string" name="lastExchangeFailureExchangeId" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+</xs:schema>
