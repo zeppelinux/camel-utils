@@ -20,9 +20,6 @@ public class DeadLetterChannelBuilderProducer {
     @Inject
     Logger logger;
 
-    @Inject
-    ExceptionEnricher enricher;
-
     @Produces
     @ErrorHandler
     public DefaultErrorHandlerBuilder mixErrorHandler(InjectionPoint injectionPoint) {
@@ -58,7 +55,7 @@ public class DeadLetterChannelBuilderProducer {
             }
         }
 
-        deadLetterChannelBuilder.onPrepareFailure(enricher);
+        //deadLetterChannelBuilder.onPrepareFailure(enricher);
 
         if (annotation.useOriginalMessage()) {
             deadLetterChannelBuilder.useOriginalMessage();

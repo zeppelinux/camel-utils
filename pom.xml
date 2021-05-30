@@ -5,7 +5,7 @@
 
     <groupId>com.diligesoft</groupId>
     <artifactId>camel-utils</artifactId>
-    <version>0.1</version>
+    <version>0.2</version>
     <packaging>jar</packaging>
     <name>diligesoft camel-utils</name>
     <description>Provides error handling automation and route stats utils for Apache Camel/Quarkus</description>
